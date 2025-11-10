@@ -3,14 +3,14 @@ const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 // Check for saved theme preference or default to light
-const currentTheme = localStorage.getItem('theme') || 'light';
+const currentTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', currentTheme);
 
 // Update theme toggle icon
 function updateThemeIcon() {
     const icon = themeToggle.querySelector('i');
-    const isDark = body.getAttribute('data-theme') === 'dark';
-    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    const isDark = body.getAttribute('data-theme') === 'light';
+    icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
 }
 
 updateThemeIcon();
