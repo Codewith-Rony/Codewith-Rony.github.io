@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rony Thomas - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">RT</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#resume" class="nav-link">Resume</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="particles" id="particles"></div>
+        <div class="home-container">
+            <div class="home-content">
+                <div class="profile-image">
+                    <img src="Assets\Profile Pic.jpg" alt="Rony Thomas" class="profile-img">
+                </div>
+                <h1 class="home-title">Hi, I'm <span class="highlight">Rony Thomas</span></h1>
+                <div class="typewriter-container">
+                    <p class="typewriter" id="typewriter"></p>
+                </div>
+                <p class="home-description">
+                    Passionate about building mobile apps with Flutter, exploring AI/ML, and creating meaningful digital experiences.
+                </p>
+                <div class="home-buttons">
+                    <a href="#resume" class="btn btn-primary">View Resume</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Codewith-Rony" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/rony-thomas777" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:ronythomasthekkel@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="scroll-indicator"> -->
+                <div class="scroll-arrow">
+                    <!-- <i class="fas fa-chevron-down"></i> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="Assets\Profile Pic.jpg" alt="Rony Thomas" class="about-img">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Hey there! I'm Rony Thomas, a final-year B.Tech student at Amal Jyothi College of Engineering, 
+                        and someone who's as comfortable with code as I am with conversations. I'm all about building 
+                        apps with Flutter, messing around with AI/ML, and occasionally pretending I don't have 100 tabs 
+                        open while web scraping. 😅
+                    </p>
+                    <p>
+                        I've interned at Leopard Tech Labs and currently juggle a hybrid role at Totamanic Marketing Solutions. 
+                        Beyond the tech world, I'm known for my solid coordination and talking skills—whether it's organizing 
+                        events or just keeping the group chat alive. If I wasn't into tech, I'd probably be out there hosting 
+                        a podcast or running a program or some motivation classes or some speaks.
+                    </p>
+                    <a href="Assets\Rony Thomas_IT_Resume.pdf" class="btn btn-primary">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Traffic Prediction System</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/Codewith-Rony/smart-traffic-prediction" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A machine learning system that predicts traffic congestion using real-time data and a clean Flask-based web interface.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Appointment Booking System</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/Codewith-Rony/appointment-booking-system" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A web app for managing appointments with features like user login, booking, and admin approval/rejection.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Travel Website</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/Codewith-Rony/travo" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A static responsive site showcasing travel packages and itineraries, designed with visual appeal in mind.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Totamanic Marketing Solutions</h3>
+                        <div class="project-links">
+                            <a href="https://www.totamanic.com" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Professional marketing solutions website with modern design and comprehensive service offerings.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Manna Counselling Centre</h3>
+                        <div class="project-links">
+                            <a href="https://www.mannacounsellingcenter.com" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Professional counselling center website with appointment booking and service information.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Languages
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Dart</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-layer-group"></i>
+                        Frameworks & Libraries
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Java Swing</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Tools & Technologies
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">GitHub</span>
+                        <span class="tech-tag">Firebase Console</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Visual Studio Code</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Databases
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Firebase Realtime DB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section section">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-content">
+                <div class="resume-description">
+                    <p>Download my resume to learn more about my experience, education, and skills.</p>
+                </div>
+                <div class="resume-buttons">
+                    <a href="Assets/Rony Thomas_IT_Resume.pdf" class="btn btn-primary" download="Rony_Thomas_Resume" onclick="showResumeMessage()">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="Assets/Rony Thomas_IT_Resume.pdf" class="btn btn-outline" target="_blank" onclick="showResumeMessage()">
+                        <i class="fas fa-eye"></i>
+                        View Resume
+                    </a>
+                </div>
+                <div id="resume-message" class="resume-message">
+                    <p>Resume download/view functionality would be implemented with actual resume file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always open to discussing new opportunities and interesting projects.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:ronythomasthekkel@gmail.com">ronythomasthekkel@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/Codewith-Rony" target="_blank">github.com/Codewith-Rony</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/rony-thomas777" target="_blank">linkedin.com/in/rony-thomas777</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+
+                <div id="form-message" class="form-message">
+                    <p>Thank you for your message! I'll get back to you soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rony Thomas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
