@@ -74,44 +74,68 @@ function setActiveNav() {
 
 window.addEventListener('scroll', setActiveNav);
 
-// Navbar background on scroll
+// Navbar scroll effects & progress bar
 const navbar = document.getElementById('navbar');
+const scrollProgressBar = document.getElementById('scroll-progress');
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        if (body.getAttribute('data-theme') === 'dark') {
-            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-        }
+    // Scroll progress
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if (scrollProgressBar) {
+        scrollProgressBar.style.width = scrollPercent + '%';
+    }
+
+    // Navbar class toggle
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        if (body.getAttribute('data-theme') === 'dark') {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        }
+        navbar.classList.remove('scrolled');
     }
 });
 
 // Typewriter Effect
 const typewriter = document.getElementById('typewriter');
-const text = 'Flutter Developer | Web Dev Enthusiast | AI/ML Explorer';
-let i = 0;
+const phrases = [
+    'Flutter Developer',
+    'Web Dev Enthusiast',
+    'AI/ML Explorer',
+    'Event Coordinator'
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
 
 function typewriterEffect() {
-    if (i < text.length) {
-        typewriter.textContent += text.charAt(i);
-        i++;
-        setTimeout(typewriterEffect, 100);
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+        typewriter.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 40; // Faster deletion
     } else {
-        setTimeout(() => {
-            typewriter.textContent = '';
-            i = 0;
-            typewriterEffect();
-        }, 3000);
+        typewriter.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 80; // Smooth typing speed
     }
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        isDeleting = true;
+        typingSpeed = 2200; // Pause at the end of phrase
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typingSpeed = 400; // Pause before typing next phrase
+    }
+
+    setTimeout(typewriterEffect, typingSpeed);
 }
 
 // Start typewriter effect after page load
 window.addEventListener('load', () => {
-    setTimeout(typewriterEffect, 1000);
+    setTimeout(typewriterEffect, 1200);
 });
 
 // Particles Animation

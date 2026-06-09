@@ -6,9 +6,21 @@
     <title>Rony Thomas - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- Aurora Background Blobs -->
+    <div class="aurora-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -40,7 +52,7 @@
         <div class="home-container">
             <div class="home-content">
                 <div class="profile-image">
-                    <img src="Assets\Profile Pic.jpg" alt="Rony Thomas" class="profile-img">
+                    <img src="Assets/Profile Pic.jpg" alt="Rony Thomas" class="profile-img">
                 </div>
                 <h1 class="home-title">Hi, I'm <span class="highlight">Rony Thomas</span></h1>
                 <div class="typewriter-container">
@@ -79,7 +91,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="Assets\Pic 1.jpg" alt="Rony Thomas" class="about-img">
+                    <img src="Assets/Pic 1.jpg" alt="Rony Thomas" class="about-img">
                 </div>
                 <div class="about-text">
                     <p>
@@ -94,7 +106,7 @@
                         events or just keeping the group chat alive. If I wasn't into tech, I'd probably be out there hosting 
                         a podcast or running a program or some motivation classes or some speaks.
                     </p>
-                    <a href="Assets\Rony Thomas_Resume.pdf" class="btn btn-primary">Download Resume</a>
+                    <a href="Assets/Rony Thomas_Resume.pdf" class="btn btn-primary">Download Resume</a>
                 </div>
             </div>
         </div>
@@ -105,6 +117,49 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Fact-Based Comparison of News Articles</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/Codewith-Rony" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A multi-source news analysis platform that compares facts reported across different media outlets, highlighting common, unique, contradictory, and omitted information to provide a broader and more balanced view of news events.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SBERT</span>
+                        <span class="tech-tag">NLI-BERT</span>
+                        <span class="tech-tag">Web Scraping</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>CHOSEN 2026 Event & Registration Portal</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/Codewith-Rony" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A serverless event management platform built for participants and volunteer registration, integrating dynamic UPI QR generation, automated email campaigns, and real-time community engagement analytics.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Google Apps Script</span>
+                        <span class="tech-tag">Google Forms</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Google Sheets</span>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Smart Traffic Prediction System</h3>
@@ -391,6 +446,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
