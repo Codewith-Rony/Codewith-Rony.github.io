@@ -98,10 +98,10 @@ window.addEventListener('scroll', () => {
 // Typewriter Effect
 const typewriter = document.getElementById('typewriter');
 const phrases = [
-    'Flutter Developer',
-    'Web Dev Enthusiast',
-    'AI/ML Explorer',
-    'Event Coordinator'
+    'Software Engineer',
+    'Full Stack Developer',
+    'AI/ML Enthusiast',
+    'Flutter Developer'
 ];
 let phraseIndex = 0;
 let charIndex = 0;
