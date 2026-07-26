@@ -138,17 +138,34 @@ window.addEventListener('load', () => {
     setTimeout(typewriterEffect, 1200);
 });
 
+// Keyboard accessibility for toggles
+[navToggle, themeToggle].forEach(toggle => {
+    if (toggle) {
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle.click();
+            }
+        });
+    }
+});
+
 // Particles Animation
 function createParticles() {
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const particlesContainer = document.getElementById('particles');
-    const particleCount = window.innerWidth < 768 ? 20 : 50;
+    if (!particlesContainer) return;
+    
+    const particleCount = window.innerWidth < 768 ? 15 : 35;
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
         
         // Random size and position
-        const size = Math.random() * 5 + 2;
+        const size = Math.random() * 4 + 2;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
         particle.style.left = Math.random() * 100 + '%';
@@ -166,9 +183,12 @@ createParticles();
 
 // Scroll Indicator
 const scrollIndicator = document.querySelector('.scroll-arrow');
-scrollIndicator.addEventListener('click', () => {
-    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-});
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        const aboutSec = document.getElementById('about');
+        if (aboutSec) aboutSec.scrollIntoView({ behavior: 'smooth' });
+    });
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -199,9 +219,11 @@ function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
     skillBars.forEach(bar => {
         const width = bar.getAttribute('data-width');
-        setTimeout(() => {
-            bar.style.width = width;
-        }, Math.random() * 500);
+        if (width) {
+            setTimeout(() => {
+                bar.style.width = width;
+            }, Math.random() * 500);
+        }
     });
 }
 
@@ -209,39 +231,28 @@ function animateSkillBars() {
 const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        contactForm.style.display = 'none';
-        formMessage.classList.add('show');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         
-        // Reset form after showing message
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...';
+        submitBtn.disabled = true;
+        
         setTimeout(() => {
-            contactForm.reset();
-            contactForm.style.display = 'block';
-            formMessage.classList.remove('show');
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    }, 2000);
-});
-
-// Resume buttons
-function showResumeMessage() {
-    const resumeMessage = document.getElementById('resume-message');
-    resumeMessage.classList.add('show');
-    
-    setTimeout(() => {
-        resumeMessage.classList.remove('show');
-    }, 5000);
+            if (formMessage) formMessage.classList.add('show');
+            
+            // Reset form after showing message
+            setTimeout(() => {
+                contactForm.reset();
+                if (formMessage) formMessage.classList.remove('show');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 5000);
+        }, 1500);
+    });
 }
 
 // Smooth reveal animations on scroll
@@ -308,3 +319,32 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+
+    const formData = new FormData();
+
+    formData.append("entry.801995976", name);
+    formData.append("entry.481586520", email);
+    formData.append("entry.1446534767", message);
+
+    await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdt1REa8Cb8kkuwb3uAvsru3aYjqmzDThVHbIAz3ZPE6BsAeQ/formResponse",
+        {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+        }
+    );
+
+    alert("Message sent successfully!");
+
+    form.reset();
+});

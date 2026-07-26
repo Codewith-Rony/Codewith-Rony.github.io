@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codewith-rony.github.io/sitemap.xml
